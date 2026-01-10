@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\matth\OneDrive\Documents\GitHub\Embedded-Telemetry-System\build\CMakeFiles\03622fd66738e10c7b306fc560cf8e96\generate.stamp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{B2F5C053-9AFD-3772-BBB9-5172D7322BF1}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

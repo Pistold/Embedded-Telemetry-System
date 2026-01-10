@@ -1,0 +1,3 @@
+C:/Users/matth/OneDrive/Documents/GitHub/Embedded-Telemetry-System/build/CMakeFiles/telemetry.dir
+C:/Users/matth/OneDrive/Documents/GitHub/Embedded-Telemetry-System/build/CMakeFiles/ALL_BUILD.dir
+C:/Users/matth/OneDrive/Documents/GitHub/Embedded-Telemetry-System/build/CMakeFiles/ZERO_CHECK.dir

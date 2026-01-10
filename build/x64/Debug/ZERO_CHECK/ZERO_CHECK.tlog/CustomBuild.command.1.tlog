@@ -1,0 +1,10 @@
+^C:\USERS\MATTH\ONEDRIVE\DOCUMENTS\GITHUB\EMBEDDED-TELEMETRY-SYSTEM\BUILD\CMAKEFILES\03622FD66738E10C7B306FC560CF8E96\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/matth/OneDrive/Documents/GitHub/Embedded-Telemetry-System -BC:/Users/matth/OneDrive/Documents/GitHub/Embedded-Telemetry-System/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/Users/matth/OneDrive/Documents/GitHub/Embedded-Telemetry-System/build/embedded_telemetry_system.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
