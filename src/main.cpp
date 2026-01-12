@@ -21,7 +21,7 @@ int main()
 {
     Scheduler scheduler;
 
-    // Add tasks with different execution periods
+    // tasks with different execution periods
     scheduler.add_task(telemetry_task, std::chrono::milliseconds(1000));
     scheduler.add_task(heartbeat_task, std::chrono::milliseconds(500));
 
