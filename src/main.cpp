@@ -1,24 +1,33 @@
 #include <iostream>
 #include <thread>
 #include <chrono>
+#include <atomic>
 
 #include "scheduler.hpp"
+#include "sensor.hpp"
 
+//Global / static objects
+TemperatureSensor temp_sensor;
+
+//latest sampled temperature
+std::atomic<int32_t> latest_temp_c{0};
+
+//sample temperature sensor
+void sensor_sample_task() {
+    latest_temp_c = temp_sensor.read();
+}
 // Simulated telemetry task
-void telemetry_task()
-{
+void telemetry_task() {
     static int counter = 0;
     std::cout << "[Telemetry] Sample #" << counter++ << std::endl;
 }
 
 // Simulated heartbeat / watchdog task
-void heartbeat_task()
-{
+void heartbeat_task() {
     std::cout << "[Heartbeat] System alive" << std::endl;
 }
 
-int main()
-{
+int main() {
     Scheduler scheduler;
 
     // tasks with different execution periods
