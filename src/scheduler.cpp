@@ -1,8 +1,6 @@
 #include "scheduler.hpp"
 
-void Scheduler::add_task(const std::function<void()>& task,
-                         std::chrono::milliseconds period)
-{
+void Scheduler::add_task(const std::function<void()>& task, std::chrono::milliseconds period) {
     Task t;
     t.func = task;
     t.period = period;
@@ -11,8 +9,7 @@ void Scheduler::add_task(const std::function<void()>& task,
     tasks_.push_back(t);
 }
 
-void Scheduler::tick()
-{
+void Scheduler::tick() {
     auto now = std::chrono::steady_clock::now();
 
     for (auto& task : tasks_) {
