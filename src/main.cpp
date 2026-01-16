@@ -16,11 +16,20 @@ std::atomic<int32_t> latest_temp_c{0};
 void sensor_sample_task() {
     latest_temp_c = temp_sensor.read();
 }
+
+//Temperature task
+void telemetry_t_task() {
+    std::cout << "[Telemetry] Temperature: " << latest_temp_c.load() << " C" << std::endl;
+}
+
+
+/*
 // Simulated telemetry task
 void telemetry_task() {
     static int counter = 0;
     std::cout << "[Telemetry] Sample #" << counter++ << std::endl;
 }
+*/
 
 // Simulated heartbeat / watchdog task
 void heartbeat_task() {
