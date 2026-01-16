@@ -11,6 +11,8 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 add_executable(telemetry
     src/main.cpp
     src/scheduler.cpp
+    src/sensor.cpp
+    
 )
 
 # Include header files

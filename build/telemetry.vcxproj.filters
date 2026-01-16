@@ -7,6 +7,9 @@
     <ClCompile Include="C:\Users\matth\OneDrive\Documents\GitHub\Embedded-Telemetry-System\src\scheduler.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="C:\Users\matth\OneDrive\Documents\GitHub\Embedded-Telemetry-System\src\sensor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="C:\Users\matth\OneDrive\Documents\GitHub\Embedded-Telemetry-System\CMakeLists.txt" />
