@@ -22,7 +22,6 @@ void telemetry_t_task() {
     std::cout << "[Telemetry] Temperature: " << latest_temp_c.load() << " C" << std::endl;
 }
 
-
 /*
 // Simulated telemetry task
 void telemetry_task() {
@@ -36,18 +35,20 @@ void heartbeat_task() {
     std::cout << "[Heartbeat] System alive" << std::endl;
 }
 
-int main() {
+int main()
+{
     Scheduler scheduler;
 
-    // tasks with different execution periods
-    scheduler.add_task(telemetry_task, std::chrono::milliseconds(1000));
-    scheduler.add_task(heartbeat_task, std::chrono::milliseconds(500));
+    // Sample sensor every 500 ms
+    scheduler.add_task(sensor_sample_task, std::chrono::milliseconds(500));
 
-    // Main loop (embedded-style super loop)
+    // Transmit telemetry every 1000 ms
+    scheduler.add_task(telemetry_t_task, std::chrono::milliseconds(1000));
+
+    // Embedded-style super loop
     while (true) {
         scheduler.tick();
-
-        // Prevent 100% CPU usage
+        //prevent 100% CPU
         std::this_thread::sleep_for(std::chrono::milliseconds(10));
     }
 
