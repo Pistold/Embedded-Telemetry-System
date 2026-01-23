@@ -5,6 +5,7 @@
 
 #include "scheduler.hpp"
 #include "sensor.hpp"
+#include "telemetry_packet.hpp"
 
 //Global / static objects
 TemperatureSensor temp_sensor;
@@ -19,7 +20,11 @@ void sensor_sample_task() {
 
 //Temperature task
 void telemetry_t_task() {
-    std::cout << "[Telemetry] Temperature: " << latest_temp_c.load() << " C" << std::endl;
+    TelemetryPacket packet = make_telemetry_packet(latest_temp_c.load());
+
+    std::cout << "[Telemetry] " 
+              << "t=" << packet.timestamp_ms << " ms, "
+              << "temp= " << packet.temperature_c << " C" << std::endl;
 }
 
 /*
