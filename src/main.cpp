@@ -7,6 +7,7 @@
 #include "sensor.hpp"
 #include "telemetry_packet.hpp"
 #include "telemetry_serializer.hpp"
+#include "radio_link.hpp"
 
 //Global / static objects
 TemperatureSensor temp_sensor;
@@ -21,8 +22,10 @@ void sensor_sample_task() {
 
 //Temperature task (easily readable results)
 void telemetry_t_task() {
+    //temperature packet
     TelemetryPacket packet = make_telemetry_packet(latest_temp_c.load());
 
+    //printing
     std::cout << "[Telemetry] " 
               << "t=" << packet.timestamp_ms << " ms, "
               << "temp= " << packet.temperature_c << " C" << std::endl;
@@ -31,16 +34,16 @@ void telemetry_t_task() {
 //serialized temperature packet task
 void telemetry_tx_task()
 {
-    TelemetryPacket packet =
-        make_telemetry_packet(latest_temp_c.load());
+    //radio link
+    static RadioLink radio;
 
+    //temperature packet
+    TelemetryPacket packet = make_telemetry_packet(latest_temp_c.load());
+
+    //serialize packet
     auto bytes = serialize_packet(packet);
 
-    std::cout << "[TX] ";
-    for (uint8_t b : bytes) {
-        std::cout << std::hex << static_cast<int>(b) << " ";
-    }
-    std::cout << std::dec << std::endl;
+    radio.send(bytes);
 }
 
 
