@@ -6,6 +6,7 @@
 #include "scheduler.hpp"
 #include "sensor.hpp"
 #include "telemetry_packet.hpp"
+#include "telemetry_serializer.hpp"
 
 //Global / static objects
 TemperatureSensor temp_sensor;
@@ -18,7 +19,7 @@ void sensor_sample_task() {
     latest_temp_c = temp_sensor.read();
 }
 
-//Temperature task
+//Temperature task (easily readable results)
 void telemetry_t_task() {
     TelemetryPacket packet = make_telemetry_packet(latest_temp_c.load());
 
@@ -27,13 +28,21 @@ void telemetry_t_task() {
               << "temp= " << packet.temperature_c << " C" << std::endl;
 }
 
-/*
-// Simulated telemetry task
-void telemetry_task() {
-    static int counter = 0;
-    std::cout << "[Telemetry] Sample #" << counter++ << std::endl;
+//serialized temperature packet task
+void telemetry_tx_task()
+{
+    TelemetryPacket packet =
+        make_telemetry_packet(latest_temp_c.load());
+
+    auto bytes = serialize_packet(packet);
+
+    std::cout << "[TX] ";
+    for (uint8_t b : bytes) {
+        std::cout << std::hex << static_cast<int>(b) << " ";
+    }
+    std::cout << std::dec << std::endl;
 }
-*/
+
 
 // Simulated heartbeat / watchdog task
 void heartbeat_task() {
@@ -48,7 +57,7 @@ int main()
     scheduler.add_task(sensor_sample_task, std::chrono::milliseconds(500));
 
     // Transmit telemetry every 1000 ms
-    scheduler.add_task(telemetry_t_task, std::chrono::milliseconds(1000));
+    scheduler.add_task(telemetry_tx_task, std::chrono::milliseconds(1000));
 
     // Embedded-style super loop
     while (true) {

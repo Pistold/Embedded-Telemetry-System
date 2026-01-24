@@ -372,6 +372,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClCompile Include="C:\Users\matth\OneDrive\Documents\GitHub\Embedded-Telemetry-System\src\scheduler.cpp" />
     <ClCompile Include="C:\Users\matth\OneDrive\Documents\GitHub\Embedded-Telemetry-System\src\sensor.cpp" />
     <ClCompile Include="C:\Users\matth\OneDrive\Documents\GitHub\Embedded-Telemetry-System\src\telemetry_packet.cpp" />
+    <ClCompile Include="C:\Users\matth\OneDrive\Documents\GitHub\Embedded-Telemetry-System\src\telemetry_serializer.cpp" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

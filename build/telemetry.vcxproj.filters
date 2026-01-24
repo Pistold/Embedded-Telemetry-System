@@ -13,6 +13,9 @@
     <ClCompile Include="C:\Users\matth\OneDrive\Documents\GitHub\Embedded-Telemetry-System\src\telemetry_packet.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="C:\Users\matth\OneDrive\Documents\GitHub\Embedded-Telemetry-System\src\telemetry_serializer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="C:\Users\matth\OneDrive\Documents\GitHub\Embedded-Telemetry-System\CMakeLists.txt" />

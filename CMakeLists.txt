@@ -13,6 +13,7 @@ add_executable(telemetry
     src/scheduler.cpp
     src/sensor.cpp
     src/telemetry_packet.cpp
+    src/telemetry_serializer.cpp
 )
 
 # Include header files
