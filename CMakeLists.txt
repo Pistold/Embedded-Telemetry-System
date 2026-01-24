@@ -14,6 +14,7 @@ add_executable(telemetry
     src/sensor.cpp
     src/telemetry_packet.cpp
     src/telemetry_serializer.cpp
+    src/radio_link.cpp
 )
 
 # Include header files
