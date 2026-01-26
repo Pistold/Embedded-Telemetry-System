@@ -43,6 +43,7 @@ void telemetry_tx_task()
     //serialize packet
     auto bytes = serialize_packet(packet);
 
+    //transmit over radio
     radio.send(bytes);
 }
 
