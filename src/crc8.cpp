@@ -1,25 +1,18 @@
-#include "telemetry_serializer.hpp"
 #include "crc8.hpp"
 
-std::vector<uint8_t> serialize_packet(const TelemetryPacket& packet)
+uint8_t crc8(const std::vector<uint8_t>& data)
 {
-    std::vector<uint8_t> buffer;
+    uint8_t crc = 0x00;
 
-    // Timestamp (uint64_t)
-    for (int i = 0; i < 8; ++i) {
-        buffer.push_back(
-            static_cast<uint8_t>((packet.timestamp_ms >> (i * 8)) & 0xFF));
+    for (uint8_t byte : data) {
+        crc ^= byte;
+        for (int i = 0; i < 8; ++i) {
+            if (crc & 0x80)
+                crc = (crc << 1) ^ 0x07;
+            else
+                crc <<= 1;
+        }
     }
 
-    // Temperature (int32_t)
-    for (int i = 0; i < 4; ++i) {
-        buffer.push_back(
-            static_cast<uint8_t>((packet.temperature_c >> (i * 8)) & 0xFF));
-    }
-
-    // Append CRC
-    uint8_t crc = crc8(buffer);
-    buffer.push_back(crc);
-
-    return buffer;
+    return crc;
 }
