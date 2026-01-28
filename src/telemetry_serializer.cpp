@@ -23,3 +23,4 @@ std::vector<uint8_t> serialize_packet(const TelemetryPacket& packet)
 
     return buffer;
 }
+
