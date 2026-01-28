@@ -3,3 +3,5 @@ C:\Users\matth\OneDrive\Documents\GitHub\Embedded-Telemetry-System\src\scheduler
 C:\Users\matth\OneDrive\Documents\GitHub\Embedded-Telemetry-System\src\sensor.cpp;C:\Users\matth\OneDrive\Documents\GitHub\Embedded-Telemetry-System\build\telemetry.dir\Debug\sensor.obj
 C:\Users\matth\OneDrive\Documents\GitHub\Embedded-Telemetry-System\src\telemetry_packet.cpp;C:\Users\matth\OneDrive\Documents\GitHub\Embedded-Telemetry-System\build\telemetry.dir\Debug\telemetry_packet.obj
 C:\Users\matth\OneDrive\Documents\GitHub\Embedded-Telemetry-System\src\telemetry_serializer.cpp;C:\Users\matth\OneDrive\Documents\GitHub\Embedded-Telemetry-System\build\telemetry.dir\Debug\telemetry_serializer.obj
+C:\Users\matth\OneDrive\Documents\GitHub\Embedded-Telemetry-System\src\radio_link.cpp;C:\Users\matth\OneDrive\Documents\GitHub\Embedded-Telemetry-System\build\telemetry.dir\Debug\radio_link.obj
+C:\Users\matth\OneDrive\Documents\GitHub\Embedded-Telemetry-System\src\crc8.cpp;C:\Users\matth\OneDrive\Documents\GitHub\Embedded-Telemetry-System\build\telemetry.dir\Debug\crc8.obj
