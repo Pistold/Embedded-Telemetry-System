@@ -8,6 +8,8 @@
 #include "telemetry_packet.hpp"
 #include "telemetry_serializer.hpp"
 #include "radio_link.hpp"
+#include "telemetry_deserializer.hpp"
+
 
 //Global / static objects
 TemperatureSensor temp_sensor;
