@@ -2,10 +2,13 @@
 #include <iostream>
 #include <iomanip>
 
+static std::vector<uint8_t> last_packet;
+
 void RadioLink::send(const std::vector<uint8_t>& data)
 {
-    std::cout << "[RADIO TX] ";
+    last_packet = data;
 
+    std::cout << "[RADIO TX] ";
     for (uint8_t b : data) {
         std::cout << std::hex
                   << std::setw(2)
@@ -13,6 +16,10 @@ void RadioLink::send(const std::vector<uint8_t>& data)
                   << static_cast<int>(b)
                   << " ";
     }
-
     std::cout << std::dec << std::endl;
+}
+
+std::vector<uint8_t> RadioLink::receive()
+{
+    return last_packet;
 }
