@@ -49,6 +49,27 @@ void telemetry_tx_task()
     radio.send(bytes);
 }
 
+void telemetry_rx_task()
+{
+    static RadioLink radio;
+
+    auto buffer = radio.receive();
+    if (buffer.empty())
+        return;
+
+    auto packet = deserialize_packet(buffer);
+
+    if (!packet) {
+        std::cout << "[RX] CRC ERROR\n";
+        return;
+    }
+
+    std::cout << "[RX] Time: " << packet->timestamp_ms
+              << " ms | Temp: "
+              << packet->temperature_c << " C\n";
+}
+
+
 
 // Simulated heartbeat / watchdog task
 void heartbeat_task() {

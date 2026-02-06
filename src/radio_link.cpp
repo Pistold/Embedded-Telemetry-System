@@ -3,7 +3,7 @@
 #include <iomanip>
 
 static std::vector<uint8_t> last_packet;
-//asdasdasdasdads
+
 void RadioLink::send(const std::vector<uint8_t>& data)
 {
     last_packet = data;
