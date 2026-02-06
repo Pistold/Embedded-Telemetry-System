@@ -5,3 +5,4 @@ C:\Users\matth\OneDrive\Documents\GitHub\Embedded-Telemetry-System\src\telemetry
 C:\Users\matth\OneDrive\Documents\GitHub\Embedded-Telemetry-System\src\telemetry_serializer.cpp;C:\Users\matth\OneDrive\Documents\GitHub\Embedded-Telemetry-System\build\telemetry.dir\Debug\telemetry_serializer.obj
 C:\Users\matth\OneDrive\Documents\GitHub\Embedded-Telemetry-System\src\radio_link.cpp;C:\Users\matth\OneDrive\Documents\GitHub\Embedded-Telemetry-System\build\telemetry.dir\Debug\radio_link.obj
 C:\Users\matth\OneDrive\Documents\GitHub\Embedded-Telemetry-System\src\crc8.cpp;C:\Users\matth\OneDrive\Documents\GitHub\Embedded-Telemetry-System\build\telemetry.dir\Debug\crc8.obj
+C:\Users\matth\OneDrive\Documents\GitHub\Embedded-Telemetry-System\src\telemetry_deserializer.cpp;C:\Users\matth\OneDrive\Documents\GitHub\Embedded-Telemetry-System\build\telemetry.dir\Debug\telemetry_deserializer.obj

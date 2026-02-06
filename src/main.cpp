@@ -86,6 +86,10 @@ int main()
     // Transmit telemetry every 1000 ms
     scheduler.add_task(telemetry_tx_task, std::chrono::milliseconds(1000));
 
+    //RX task format-deserializer
+    scheduler.add_task(telemetry_rx_task, std::chrono::milliseconds(1000));
+
+
     // Embedded-style super loop
     while (true) {
         scheduler.tick();

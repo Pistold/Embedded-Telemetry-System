@@ -58,7 +58,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "telemetry::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-telemetry-Debug-9acc7f14a82b023058da.json",
+					"jsonFile" : "target-telemetry-Debug-39f4d0cec161b172e32b.json",
 					"name" : "telemetry",
 					"projectIndex" : 0
 				}
@@ -121,7 +121,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "telemetry::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-telemetry-Release-82868b5a9afe78731933.json",
+					"jsonFile" : "target-telemetry-Release-4a66d0d6d57fcd64e33e.json",
 					"name" : "telemetry",
 					"projectIndex" : 0
 				}
@@ -184,7 +184,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "telemetry::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-telemetry-MinSizeRel-4620fde50dcc87b6e3a6.json",
+					"jsonFile" : "target-telemetry-MinSizeRel-c5d9f294178ba559432e.json",
 					"name" : "telemetry",
 					"projectIndex" : 0
 				}
@@ -247,7 +247,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "telemetry::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-telemetry-RelWithDebInfo-94945c8a6ebf2b587e01.json",
+					"jsonFile" : "target-telemetry-RelWithDebInfo-ab01cc294a6fa39b80b1.json",
 					"name" : "telemetry",
 					"projectIndex" : 0
 				}
