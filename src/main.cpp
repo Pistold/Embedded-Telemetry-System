@@ -64,9 +64,7 @@ void telemetry_rx_task()
         return;
     }
 
-    std::cout << "[RX] Time: " << packet->timestamp_ms
-              << " ms | Temp: "
-              << packet->temperature_c << " C\n";
+    std::cout << "[RX] Time: " << packet->timestamp_ms << " ms | Temp: " << packet->temperature_c << " C\n";
 }
 
 
