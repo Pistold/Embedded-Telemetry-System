@@ -1,6 +1,8 @@
 #include "radio_link.hpp"
 #include <iostream>
 #include <iomanip>
+#include <random>
+#include <algorithm>
 
 static std::vector<uint8_t> last_packet;
 
