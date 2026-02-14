@@ -16,7 +16,25 @@ void RadioLink::send(const std::vector<uint8_t>& data)
     // Randomly decide whether to corrupt this packet
     static thread_local std::mt19937 rng(std::random_device{}());
     std::bernoulli_distribution corrupt_dist(PACKET_CORRUPTION_PROB);
-    
+
+    if (!last_packet.empty() && corrupt_dist(rng)) {
+        // Choose a random byte index and a random bit to flip
+        std::uniform_int_distribution<size_t> byte_index_dist(0, last_packet.size() - 1);
+        size_t idx = byte_index_dist(rng);
+
+        std::uniform_int_distribution<int> bit_dist(0, 7);
+        int bit = bit_dist(rng);
+
+        uint8_t mask = static_cast<uint8_t>(1u << bit);
+        // flip one bit
+        last_packet[idx] ^= mask; 
+
+        //print
+        std::cout << "[RADIO TX] (corrupted) ";
+    } else {
+        std::cout << "[RADIO TX]";
+    }
+
     std::cout << "[RADIO TX] ";
     for (uint8_t b : data) {
         std::cout << std::hex
