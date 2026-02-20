@@ -13,7 +13,7 @@ void RadioLink::send(const std::vector<uint8_t>& data)
 {
     last_packet = data;
 
-    // Randomly decide whether to corrupt this packet
+    // Randomly decide whether to corrupt this packetmight be cooked
     static thread_local std::mt19937 rng(std::random_device{}());
     std::bernoulli_distribution corrupt_dist(PACKET_CORRUPTION_PROB);
 
