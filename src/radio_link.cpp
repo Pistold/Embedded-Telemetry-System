@@ -6,7 +6,7 @@
 
 static std::vector<uint8_t> last_packet;
 
-//changes how often corruption happens 
+//changes how often corruption happens s
 static constexpr double PACKET_CORRUPTION_PROB = 0.05; // 5%
 
 void RadioLink::send(const std::vector<uint8_t>& data)
