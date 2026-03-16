@@ -78,7 +78,7 @@ int main()
 {
     Scheduler scheduler;
 
-    // Sample sensor every 500 ms
+    // Sample sensor every 500 mssds
     scheduler.add_task(sensor_sample_task, std::chrono::milliseconds(500));
 
     // Transmit telemetry every 1000 ms
