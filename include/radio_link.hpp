@@ -6,7 +6,7 @@
 
 class RadioLink {
 public:
-    //may corrupt bytes for sim purposes
+    //may corrupt bytes for simulation 
     void send(const std::vector<uint8_t>& data);
 
     // Simulated receive (loopback)
